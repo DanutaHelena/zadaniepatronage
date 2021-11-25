@@ -15,11 +15,11 @@ public class ReservationController {
     public ReservationController(ReservationService reservationService) {
         this.reservationService = reservationService;
     }
-    @PostMapping("/{id}")
+    @PutMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Reservation createReservation(@RequestBody ReservationRequest reservationRequest) {
-        return reservationService.createReservation(reservationService);
+    public Reservation createReservation(@RequestBody ReservationRequest reservationRequest, @PathVariable String id) {
+        return reservationService.createReservation(reservationRequest);
 
     }
-
+    @DeleteMapping("/{id}/")
 }
