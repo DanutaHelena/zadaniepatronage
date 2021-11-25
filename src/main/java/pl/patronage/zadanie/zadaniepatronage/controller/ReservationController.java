@@ -6,6 +6,8 @@ import pl.patronage.zadanie.zadaniepatronage.domain.Reservation;
 import pl.patronage.zadanie.zadaniepatronage.model.ReservationRequest;
 import pl.patronage.zadanie.zadaniepatronage.service.ReservationService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/reservations")
 public class ReservationController {
@@ -21,5 +23,14 @@ public class ReservationController {
         return reservationService.createReservation(reservationRequest);
 
     }
-    @DeleteMapping("/{id}/")
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void removeReservation(@PathVariable String id) {
+        reservationService.removeReservation(id);
+    }
+    @GetMapping("/{id}")
+    public List<Reservation> reservationList(){
+        return reservationService.getReservationList();
+
+    }
 }

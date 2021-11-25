@@ -15,12 +15,6 @@ import pl.patronage.zadanie.zadaniepatronage.repository.ReservationRepository;
 public class ParkingService {
 
     private final ReservationRepository reservationRepository;
-    private final ParkingRepository parkingRepository;
-
-    public Reservation createReservation(ReservationRequest reservationRequest) {
-        Parking parking = parkingRepository.
-    }
-    public void removeReservation(String id){
-        reservationRepository.
+    private final ParkingRepository parkingRepository; {
     }
 }
